@@ -4,7 +4,15 @@
   >Go Backward</a
 >
 
-<%- include('../components/navbar', {slot: params.get("lol") || "bro"}) %>
+<%- include('../components/navbar', {loggedIn: true}) %>
 <div class="container flex justify-center items-center h-auto py-4 w-full">
-  <%- include('../components/card', {title: "Here is login", subtitle: "Subtitle here"}) %>
+  <form method="POST" action="/">
+    <label for="cookieName">Cookie Name:</label>
+    <input type="text" id="cookieName" name="cookieName">
+    <br>
+    <label for="cookieValue">Cookie Value:</label>
+    <input type="text" id="cookieValue" name="cookieValue">
+    <br>
+    <button type="submit">Set Cookie</button>
+</form>
 </div>
